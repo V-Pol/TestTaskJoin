@@ -1,0 +1,28 @@
+﻿@model IEnumerable<JoinTable.Models.Report>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <h2>Сроки сдачи отчетности</h2>
+      <div class="table-responsive">
+
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Название</th>
+              <th scope="col">Срок представления</th>
+            </tr>
+          </thead>
+          @{int i = 1;
+          foreach (var item in Model)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@item.ReportName</td>
+                    <td>@item.FrequencyText</td>
+                </tr>
+                i++;
+            }}
+        </table>
+
+      </div>
+    </main>
